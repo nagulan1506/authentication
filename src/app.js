@@ -14,6 +14,14 @@ app.get("/health", (req, res) => {
   res.json({ status: "ok" });
 });
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Welcome to the Authentication API",
+    health_check: "/health",
+    documentation: "See POSTMAN collection or README"
+  });
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 
